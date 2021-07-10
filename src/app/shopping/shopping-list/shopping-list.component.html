@@ -1,4 +1,4 @@
+<app-create-item></app-create-item>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let ingredient of ingredients" >
-        {{ingredient.name}} ({{ingredient.amount}}) </li>
+    <app-shopping-item *ngFor = "let ing of ingredients" [ingredient]="ing"  ></app-shopping-item>
 </ul>

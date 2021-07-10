@@ -7,12 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  show:string  = "Recipe";
 
   constructor(){
-    console.log("<p>");
-  
   }
 
+  onNavigate(selected:any){
+   this.show = selected;
+  }
 
   
 

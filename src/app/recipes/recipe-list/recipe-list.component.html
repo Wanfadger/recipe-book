@@ -6,16 +6,10 @@
     </div>
     <hr>
 
-    <div class="row" *ngFor="let recipe of recipes">
-        <div class="col-sm-7">
-           <h4>{{recipe.name}}</h4>
-            <p>{{recipe.description}}</p>
-              
-        </div>
-
-        <div class="col-sm-5">
-            <img [src]="recipe.imageUrl"  alt="image" srcset="" style="max-height: 50px;" >
-        </div>
+    <div>
+        <app-recipe-item *ngFor="let recipe of recipes" [recipe] = "recipe"
+        (selectedRecipeEvent) = "onSelectedRecipe($event)"
+        ></app-recipe-item>
     </div>
   
 </div>

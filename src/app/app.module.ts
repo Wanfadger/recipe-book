@@ -11,6 +11,9 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { ShoppingItemComponent } from './shopping/shopping-item/shopping-item.component';
 import { CreateItemComponent } from './shopping/create-item/create-item.component';
+import { FormsModule } from '@angular/forms';
+import { DroppdownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping/shoppinglist.service';
 
 
 @NgModule({
@@ -25,12 +28,14 @@ import { CreateItemComponent } from './shopping/create-item/create-item.componen
     ShoppingListComponent,
     ShoppingItemComponent,
     CreateItemComponent,
+    DroppdownDirective
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

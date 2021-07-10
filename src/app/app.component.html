@@ -2,18 +2,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <app-header></app-header>
+            <app-header (selectEvent)="onNavigate($event)" ></app-header>
         </div>
     </div>
 
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-           <app-recipes></app-recipes>
-        </div>
-
-        <div class="col-sm-12">
-          <app-shopping></app-shopping>
+           <app-recipes *ngIf=" show == 'Recipe' "></app-recipes>
+           <app-shopping *ngIf = " show == 'Shopping List' " ></app-shopping>
         </div>
     </div>
+</div>
 
 </div>
