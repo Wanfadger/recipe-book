@@ -17,7 +17,13 @@ export class RecipeService{
         [
           new Ingredient('Buns', 2),
           new Ingredient('Meat', 1)
-        ])
+        ]),
+        new Recipe("Test Recipe" , "This is A test recipe" , "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEwTPQImajlKz678fBeLji9MomX-F0Y2wu6Q&usqp=CAU" , 
+        [new Ingredient("iuwiuwhs" , 2)]
+        ),
+
+    new Recipe("name" , "desscription" , "https://static.onecms.io/wp-content/uploads/sites/43/2020/07/22/8000900-2000.jpg" , [new Ingredient("iuwiuwhs" , 2)]),
+  
    ]
 
     getRecipes():Recipe[]{
