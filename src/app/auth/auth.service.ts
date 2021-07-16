@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 import { catchError , tap } from "rxjs/operators";
 import { User } from "./user.model";
+import { environment } from "../../environments/environment";
 
 export interface AuthResponse{
     idToken:string
@@ -20,16 +21,14 @@ export class AuthService{
     constructor(private _http:HttpClient){}
 
     signUp(data:{email:string , password:string , returnSecureToken:boolean}):Observable<AuthResponse>{
-        const key:String ="AIzaSyA3ZelDk_kiFAv_u7uKctEukzHyQvgx7Eg"
-      return this._http.post<AuthResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${key}` , data)
+      return this._http.post<AuthResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.fireBaseApKey}` , data)
       .pipe(tap(resData => this.handleAuthentication(resData.email ,  resData.localId , resData.idToken , resData.expiresIn)))
          
     }
 
 
     login(data:{email:string , password:string , returnSecureToken:boolean}):Observable<AuthResponse>{
-        const key:String ="AIzaSyA3ZelDk_kiFAv_u7uKctEukzHyQvgx7Eg"
-      return this._http.post<AuthResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${key}` , data)
+      return this._http.post<AuthResponse>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.fireBaseApKey}` , data)
       .pipe(tap(resData => this.handleAuthentication(resData.email ,  resData.localId , resData.idToken , resData.expiresIn)))
          
     }
