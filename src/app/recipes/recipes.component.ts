@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { __read } from 'tslib';
 import { Recipe } from './recipe.model';
 
 @Component({

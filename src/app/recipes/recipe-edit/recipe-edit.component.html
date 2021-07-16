@@ -1,0 +1,60 @@
+
+<form (ngSubmit)="onSubmit()" #form="ngForm" [formGroup] = "recipeForm">
+    <div>
+        <button name="" type="submit" class="btn btn-success mr-3" href="#" role="button">{{editMode ? "Edit" : "Save"}}</button>
+        <button name="" type="button" class="btn btn-warning" href="#" role="button">Cancel</button>
+    </div>
+    
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text"
+        class="form-control" name="" 
+        formControlName="name"
+        id="" aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="">ImageUrl</label>
+      <input type="text"
+       formControlName="imageUrl"
+       #image
+        class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+      <small id="helpId" class="form-text text-muted">Help text</small>
+
+    </div>
+
+    .<div class="form-group">
+     <img [src]="image.value" style="height:200px;" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="image">
+    </div>
+
+    <div class="form-group">
+      <label for=""></label>
+      <textarea class="form-control" formControlName="description" id="" rows="3"></textarea>
+    </div>
+    
+    <div formArrayName="ingredients" >
+
+      <div class="mb-2" *ngFor="let item of getFormArrayControls() ; let i = index">
+        <div [formGroupName]="i" class="row" >
+        <div class="col-6">
+          <input type="text" class="form-control" formControlName= "name">
+        </div>
+        <div class="col-3">
+          <input type="number" class="form-control" formControlName="amount">
+        </div>
+  
+        <div class="col">
+         <button class=" btn btn-danger" (click) = "deleteIngredient(i)" type="button">x</button>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+    <div>
+      <button type="button" class="btn btn-secondary" [disabled] = "!recipeForm.valid" (click) = "onAddIngredient()" >Add Ingredient</button>
+    </div>
+
+</form>

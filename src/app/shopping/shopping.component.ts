@@ -7,7 +7,7 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit {
-  indgredient !: Ingredient
+
   
   constructor() { }
 

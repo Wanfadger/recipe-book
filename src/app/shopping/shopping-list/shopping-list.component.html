@@ -1,4 +1,4 @@
 <app-create-item></app-create-item>
 <ul class="list-group">
-    <app-shopping-item *ngFor = "let ing of ingredients" [ingredient]="ing"  ></app-shopping-item>
+    <app-shopping-item *ngFor = "let ing of ingredients ; let i=index" [index]="i"  ></app-shopping-item>
 </ul>

@@ -2,15 +2,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
-            <app-header (selectEvent)="onNavigate($event)" ></app-header>
+            <app-header></app-header>
         </div>
     </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-           <app-recipes *ngIf=" show == 'Recipe' "></app-recipes>
-           <app-shopping *ngIf = " show == 'Shopping List' " ></app-shopping>
+        <div class="col-sm-12 mt-2">
+           <router-outlet></router-outlet>
         </div>
     </div>
 </div>

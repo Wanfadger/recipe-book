@@ -11,9 +11,6 @@ export class ShoppingListComponent implements OnInit {
 
   ingredients !: Ingredient[]; 
 
-  @Input() ingredient !:Ingredient
-
-
   constructor(private _shoppingListService:ShoppingListService) { }
 
   ngOnInit(): void {
